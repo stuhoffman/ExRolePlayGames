@@ -123,6 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(newAttack)
         newAttack.zPosition = thePlayer.zPosition - 1
         
+        thePlayer.run(SKAction(named: "FrontAttack")! )
     }
     
     //MARK: ============= Gesture Recognizers
@@ -316,7 +317,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    //MARK: Physics contacts
+    //MARK: ======> Physics contacts
     
     func didBegin(_ contact: SKPhysicsContact) {
         
@@ -337,6 +338,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print ("touched a castle")
         }
         
+        /////
+        if (contact.bodyA.categoryBitMask == BodyType.attackArea.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
+            print ("Hit the castle")
+            contact.bodyB.node?.removeFromParent()
+        } else if (contact.bodyA.categoryBitMask == BodyType.castle.rawValue && contact.bodyB.categoryBitMask == BodyType.attackArea.rawValue) {
+            print ("Hit the castle")
+            contact.bodyA.node?.removeFromParent()
+        }
         
     }
     
