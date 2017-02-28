@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		207D01991E6541F70085C20D /* AttackArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D01981E6541F70085C20D /* AttackArea.swift */; };
 		DA0304831E538FA70003FA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0304821E538FA70003FA86 /* AppDelegate.swift */; };
 		DA0304851E538FA70003FA86 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA0304841E538FA70003FA86 /* GameScene.sks */; };
 		DA0304871E538FA70003FA86 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA0304861E538FA70003FA86 /* Actions.sks */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		207D01981E6541F70085C20D /* AttackArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackArea.swift; sourceTree = "<group>"; };
 		DA03047F1E538FA70003FA86 /* RolePlayingGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RolePlayingGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0304821E538FA70003FA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA0304841E538FA70003FA86 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				DA0304841E538FA70003FA86 /* GameScene.sks */,
 				DA0304861E538FA70003FA86 /* Actions.sks */,
 				DA0304881E538FA70003FA86 /* GameScene.swift */,
+				207D01981E6541F70085C20D /* AttackArea.swift */,
 				DA03048A1E538FA70003FA86 /* GameViewController.swift */,
 				DA03048C1E538FA70003FA86 /* Main.storyboard */,
 				DA03048F1E538FA70003FA86 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				DA0304891E538FA70003FA86 /* GameScene.swift in Sources */,
 				DA03048B1E538FA70003FA86 /* GameViewController.swift in Sources */,
 				DA0304831E538FA70003FA86 /* AppDelegate.swift in Sources */,
+				207D01991E6541F70085C20D /* AttackArea.swift in Sources */,
 				DA03049B1E5390350003FA86 /* Castle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +322,7 @@
 				DA0304991E538FA70003FA86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

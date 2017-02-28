@@ -14,6 +14,7 @@ enum BodyType:UInt32{
     case player = 1
     case building = 2
     case castle = 4
+    case attackArea = 8
     
     //powers of 2 (so keep multiplying by 2
     
@@ -37,16 +38,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         
-        self.physicsWorld.gravity = CGVector(dx: 1, dy: 0)
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
-        /*
-         
+        
          tapRec.addTarget(self, action:#selector(GameScene.tappedView))
-         tapRec.numberOfTouchesRequired = 2
-         tapRec.numberOfTapsRequired = 3
+         tapRec.numberOfTouchesRequired = 1
+         tapRec.numberOfTapsRequired = 1
          self.view!.addGestureRecognizer(tapRec)
          
-         
+           /*
          rotateRec.addTarget(self, action: #selector (GameScene.rotatedView (_:) ))
          self.view!.addGestureRecognizer(rotateRec)
          
@@ -114,12 +114,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    //MARK: ============= ATTACK
+
+    func attack() {
+        let newAttack:AttackArea = AttackArea(imageNamed: "AttackCircle")
+        newAttack.position = thePlayer.position
+        newAttack.setUp()
+        self.addChild(newAttack)
+        newAttack.zPosition = thePlayer.zPosition - 1
+        
+    }
     
     //MARK: ============= Gesture Recognizers
     
     func tappedView() {
-        
-        print("tapped three times")
+        print("Attacking")
+        attack()
         
     }
     
