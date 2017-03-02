@@ -31,8 +31,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let swipeDownRec = UISwipeGestureRecognizer()
     let rotateRec = UIRotationGestureRecognizer()
     let tapRec = UITapGestureRecognizer()
-    
-    
+    var currentLevel:String = "Grassland"
+
     
     override func didMove(to view: SKView) {
         
@@ -40,6 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
+        parsePropertyList()
         
          tapRec.addTarget(self, action:#selector(GameScene.tappedView))
          tapRec.numberOfTouchesRequired = 1
@@ -114,6 +115,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    //MARK: ============= PROPERTY LIST
+
+    func parsePropertyList() {
+        
+        let path = Bundle.main.path(forResource:"GameData", ofType: "plist")
+        let dict:NSDictionary = NSDictionary(contentsOfFile: path!)!
+        
+        if (dict.object(forKey: "Levels") != nil) {
+            if let levelDict:[String : Any] = dict.object(forKey: "Levels") as? [String : Any] {
+                for (key, value) in levelDict {
+                    if ( key == currentLevel) {
+                        
+                        if let levelData:[String : Any] = value as? [String : Any] {
+                            
+                            for (key, value) in levelData {
+                                if (key == "NPC") {
+                                    
+                                    createNPCwithDict( theDict: value as! [String : Any] )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func createNPCwithDict ( theDict:[String : Any]) {
+        //print(theDict)
+        for (key, _) in theDict {
+            print(key)
+        }
+    }
     //MARK: ============= ATTACK
 
     func attack() {
