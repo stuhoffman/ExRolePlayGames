@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2036BF851E68DFBF00FB36A1 /* VillagerBackWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036BF811E68DFBF00FB36A1 /* VillagerBackWalking.atlas */; };
+		2036BF861E68DFBF00FB36A1 /* VillagerFrontWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036BF821E68DFBF00FB36A1 /* VillagerFrontWalking.atlas */; };
+		2036BF871E68DFBF00FB36A1 /* VillagerLeftWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036BF831E68DFBF00FB36A1 /* VillagerLeftWalking.atlas */; };
+		2036BF881E68DFBF00FB36A1 /* VillagerRightWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036BF841E68DFBF00FB36A1 /* VillagerRightWalking.atlas */; };
 		207D01991E6541F70085C20D /* AttackArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D01981E6541F70085C20D /* AttackArea.swift */; };
 		207D019B1E6549C70085C20D /* AttackingFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 207D019A1E6549C70085C20D /* AttackingFrames.atlas */; };
 		207D019F1E654A360085C20D /* FrontAttackFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 207D019E1E654A360085C20D /* FrontAttackFrames.atlas */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2036BF811E68DFBF00FB36A1 /* VillagerBackWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerBackWalking.atlas; sourceTree = "<group>"; };
+		2036BF821E68DFBF00FB36A1 /* VillagerFrontWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerFrontWalking.atlas; sourceTree = "<group>"; };
+		2036BF831E68DFBF00FB36A1 /* VillagerLeftWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerLeftWalking.atlas; sourceTree = "<group>"; };
+		2036BF841E68DFBF00FB36A1 /* VillagerRightWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerRightWalking.atlas; sourceTree = "<group>"; };
 		207D01981E6541F70085C20D /* AttackArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackArea.swift; sourceTree = "<group>"; };
 		207D019A1E6549C70085C20D /* AttackingFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AttackingFrames.atlas; sourceTree = "<group>"; };
 		207D019E1E654A360085C20D /* FrontAttackFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = FrontAttackFrames.atlas; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 				DA03048C1E538FA70003FA86 /* Main.storyboard */,
 				207D019E1E654A360085C20D /* FrontAttackFrames.atlas */,
 				DA03048F1E538FA70003FA86 /* Assets.xcassets */,
+				2036BF811E68DFBF00FB36A1 /* VillagerBackWalking.atlas */,
+				2036BF821E68DFBF00FB36A1 /* VillagerFrontWalking.atlas */,
+				2036BF831E68DFBF00FB36A1 /* VillagerLeftWalking.atlas */,
+				2036BF841E68DFBF00FB36A1 /* VillagerRightWalking.atlas */,
 				207D019A1E6549C70085C20D /* AttackingFrames.atlas */,
 				DA0304911E538FA70003FA86 /* LaunchScreen.storyboard */,
 				DA0304941E538FA70003FA86 /* Info.plist */,
@@ -151,9 +163,13 @@
 				207D019B1E6549C70085C20D /* AttackingFrames.atlas in Resources */,
 				207D019F1E654A360085C20D /* FrontAttackFrames.atlas in Resources */,
 				DA03048E1E538FA70003FA86 /* Main.storyboard in Resources */,
+				2036BF861E68DFBF00FB36A1 /* VillagerFrontWalking.atlas in Resources */,
 				DA0304851E538FA70003FA86 /* GameScene.sks in Resources */,
 				207D01A11E67C7E40085C20D /* GameData.plist in Resources */,
+				2036BF881E68DFBF00FB36A1 /* VillagerRightWalking.atlas in Resources */,
 				DA0304901E538FA70003FA86 /* Assets.xcassets in Resources */,
+				2036BF871E68DFBF00FB36A1 /* VillagerLeftWalking.atlas in Resources */,
+				2036BF851E68DFBF00FB36A1 /* VillagerBackWalking.atlas in Resources */,
 				DA0304931E538FA70003FA86 /* LaunchScreen.storyboard in Resources */,
 				DA0304871E538FA70003FA86 /* Actions.sks in Resources */,
 			);
