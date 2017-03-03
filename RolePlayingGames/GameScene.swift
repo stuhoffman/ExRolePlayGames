@@ -144,9 +144,61 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func createNPCwithDict ( theDict:[String : Any]) {
         //print(theDict)
-        for (key, _) in theDict {
-            print(key)
+        for (key, value) in theDict {
+            
+            var theBaseImage:String = ""
+            var theRange:String = ""
+            let nickName:String = key
+            
+            if let NPCData:[String : Any] = value as? [String : Any] {
+                for (key, value) in  NPCData {
+                    if (key == "BaseImage") {
+                        theBaseImage = value as! String
+                        print("The baseImage = \(theBaseImage)")
+                    } else if (key == "Range") {
+                        theRange = value as! String
+                    }
+                }
+            }
+            let newNPC:NonPlayerCharacter = NonPlayerCharacter(imageNamed: theBaseImage)
+            newNPC.name = nickName
+            print("nickName = \(nickName)")
+            newNPC.setupWithDict(theDict: value as! [String : Any] )
+            self.addChild(newNPC)
+            newNPC.zPosition = thePlayer.zPosition - 1
+            newNPC.position = putWithinRange(nodeName: theRange)
+            
+
         }
+    }
+    
+    //MARK: ============= CALCULATE A RANGE AREA
+
+    func putWithinRange(nodeName:String) -> CGPoint {
+        
+        var somePoint:CGPoint = CGPoint.zero
+        
+        for node in self.children {
+            
+            if (node.name == nodeName) {
+                
+                if let rangeNode:SKSpriteNode = node as? SKSpriteNode {
+                    
+                    let widthVar:UInt32 = UInt32(rangeNode.frame.size.width)
+                    let heightVar:UInt32 = UInt32(rangeNode.frame.size.height)
+                    
+                    let randomX = arc4random_uniform( widthVar)
+                    let randomY = arc4random_uniform( heightVar)
+                    
+                    let frameStartX = rangeNode.position.x - (rangeNode.size.width / 2      )
+                    let frameStartY = rangeNode.position.y - (rangeNode.size.height / 2     )
+                    
+                    somePoint = CGPoint(x: frameStartX + CGFloat(randomX), y: frameStartY + CGFloat(randomY))
+                }
+                break
+            }
+        }
+        return somePoint
     }
     //MARK: ============= ATTACK
 
