@@ -16,6 +16,7 @@
 		207D01991E6541F70085C20D /* AttackArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D01981E6541F70085C20D /* AttackArea.swift */; };
 		207D019F1E654A360085C20D /* FrontAttackFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 207D019E1E654A360085C20D /* FrontAttackFrames.atlas */; };
 		207D01A11E67C7E40085C20D /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207D01A01E67C7E40085C20D /* GameData.plist */; };
+		20BF65D61E711E500037CE7C /* Herculanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20BF65D51E711E500037CE7C /* Herculanum.ttf */; };
 		DA0304831E538FA70003FA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0304821E538FA70003FA86 /* AppDelegate.swift */; };
 		DA0304851E538FA70003FA86 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA0304841E538FA70003FA86 /* GameScene.sks */; };
 		DA0304871E538FA70003FA86 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA0304861E538FA70003FA86 /* Actions.sks */; };
@@ -37,6 +38,7 @@
 		207D01981E6541F70085C20D /* AttackArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackArea.swift; sourceTree = "<group>"; };
 		207D019E1E654A360085C20D /* FrontAttackFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = FrontAttackFrames.atlas; sourceTree = "<group>"; };
 		207D01A01E67C7E40085C20D /* GameData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameData.plist; sourceTree = "<group>"; };
+		20BF65D51E711E500037CE7C /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Herculanum.ttf; path = VillagerRightWalking.atlas/Herculanum.ttf; sourceTree = "<group>"; };
 		DA03047F1E538FA70003FA86 /* RolePlayingGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RolePlayingGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0304821E538FA70003FA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA0304841E538FA70003FA86 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20BF65D71E711E610037CE7C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20BF65D51E711E500037CE7C /* Herculanum.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		DA0304761E538FA70003FA86 = {
 			isa = PBXGroup;
 			children = (
@@ -83,18 +93,19 @@
 				DA0304821E538FA70003FA86 /* AppDelegate.swift */,
 				DA03049A1E5390350003FA86 /* Castle.swift */,
 				DA0304841E538FA70003FA86 /* GameScene.sks */,
+				20BF65D71E711E610037CE7C /* Fonts */,
 				DA0304861E538FA70003FA86 /* Actions.sks */,
 				DA0304881E538FA70003FA86 /* GameScene.swift */,
-				207D01A01E67C7E40085C20D /* GameData.plist */,
 				207D01981E6541F70085C20D /* AttackArea.swift */,
 				DA03048A1E538FA70003FA86 /* GameViewController.swift */,
+				2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */,
 				DA03048C1E538FA70003FA86 /* Main.storyboard */,
 				2036C0B61E691B6D00FB36A1 /* AttackingFrames.atlas */,
 				207D019E1E654A360085C20D /* FrontAttackFrames.atlas */,
 				DA03048F1E538FA70003FA86 /* Assets.xcassets */,
 				DA0304911E538FA70003FA86 /* LaunchScreen.storyboard */,
+				207D01A01E67C7E40085C20D /* GameData.plist */,
 				DA0304941E538FA70003FA86 /* Info.plist */,
-				2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */,
 				2036C0B81E691BB400FB36A1 /* VillagerBackWalking.atlas */,
 				2036C0B91E691BB400FB36A1 /* VillagerFrontWalking.atlas */,
 				2036C0BA1E691BB400FB36A1 /* VillagerLeftWalking.atlas */,
@@ -165,6 +176,7 @@
 			files = (
 				207D019F1E654A360085C20D /* FrontAttackFrames.atlas in Resources */,
 				DA03048E1E538FA70003FA86 /* Main.storyboard in Resources */,
+				20BF65D61E711E500037CE7C /* Herculanum.ttf in Resources */,
 				DA0304851E538FA70003FA86 /* GameScene.sks in Resources */,
 				2036C0BD1E691BB400FB36A1 /* VillagerFrontWalking.atlas in Resources */,
 				207D01A11E67C7E40085C20D /* GameData.plist in Resources */,

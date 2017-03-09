@@ -15,6 +15,7 @@ enum BodyType:UInt32{
     case building = 2
     case castle = 4
     case attackArea = 8
+    case npc = 16
     
     //powers of 2 (so keep multiplying by 2
     
@@ -33,13 +34,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let tapRec = UITapGestureRecognizer()
     var currentLevel:String = "Grassland"
 
+    var infoLabel1:SKLabelNode = SKLabelNode()
+    var infoLabel2:SKLabelNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
         
         self.physicsWorld.contactDelegate = self
-        
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
+        if let theCamera = self.childNode(withName: "TheCamera") as? SKCameraNode {
+            self.camera = theCamera
+            
+            if (theCamera.childNode(withName: "InfoLabel1") is SKLabelNode ) {
+                infoLabel1 = theCamera.childNode(withName: "InfoLabel1") as! SKLabelNode
+                infoLabel1.text = ""
+            }
+
+            if (theCamera.childNode(withName: "InfoLabel2") is SKLabelNode ) {
+                infoLabel2 = theCamera.childNode(withName: "InfoLabel2") as! SKLabelNode
+                infoLabel2.text = ""
+            }
+
+        }
         parsePropertyList()
         
          tapRec.addTarget(self, action:#selector(GameScene.tappedView))
@@ -162,6 +178,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             let newNPC:NonPlayerCharacter = NonPlayerCharacter(imageNamed: theBaseImage)
             newNPC.name = nickName
+            newNPC.baseFrame = theBaseImage
             print("nickName = \(nickName)")
             newNPC.setupWithDict(theDict: value as! [String : Any] )
             self.addChild(newNPC)
@@ -319,7 +336,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 
             }
-        }
+        }//for node loop
+        
+        self.camera?.position = thePlayer.position
         
         
         
@@ -409,33 +428,95 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.building.rawValue) {
             
-            print ("touched a building")
-        } else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.building.rawValue) {
-            
-            print ("touched a building")
-            
-            
-            
-        } else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
-            
-            print ("touched a castle")
-        } else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.castle.rawValue) {
-            
-            print ("touched a castle")
+            //print ("touched a building")
         }
-        
+        else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.building.rawValue) {
+            
+            //print ("touched a building")
+        }
+        else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
+            
+           //print ("touched a castle")
+        }
+        else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.castle.rawValue) {
+            
+            //print ("touched a castle")
+        }
+        else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.npc.rawValue) {
+            if let theNPC:NonPlayerCharacter = contact.bodyB.node as? NonPlayerCharacter {
+                splitTextIntoFields( theText: theNPC.speak())
+                theNPC.contactPlayer()
+            }
+        }
+        else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.npc.rawValue) {
+            if let theNPC:NonPlayerCharacter = contact.bodyA.node as? NonPlayerCharacter {
+                splitTextIntoFields( theText: theNPC.speak())
+                theNPC.contactPlayer()
+            }
+        }
+
         /////
         if (contact.bodyA.categoryBitMask == BodyType.attackArea.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
             print ("Hit the castle")
             contact.bodyB.node?.removeFromParent()
-        } else if (contact.bodyA.categoryBitMask == BodyType.castle.rawValue && contact.bodyB.categoryBitMask == BodyType.attackArea.rawValue) {
+        }
+        else if (contact.bodyA.categoryBitMask == BodyType.castle.rawValue && contact.bodyB.categoryBitMask == BodyType.attackArea.rawValue) {
             print ("Hit the castle")
             contact.bodyA.node?.removeFromParent()
         }
         
     }
     
+    //MARK: Did End Contact
+
+    func didEnd(_ contact: SKPhysicsContact){
+        if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.npc.rawValue) {
+            
+            if let theNPC:NonPlayerCharacter = contact.bodyB.node as? NonPlayerCharacter {
+                theNPC.endContactPlayer()
+                infoLabel1.text = ""
+                infoLabel2.text = ""
+            }
+        }
+        else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.npc.rawValue) {
+            
+            if let theNPC:NonPlayerCharacter = contact.bodyA.node as? NonPlayerCharacter {
+                theNPC.endContactPlayer()
+                
+                infoLabel1.text = ""
+                infoLabel2.text = ""
+            }
+        }
+    }//end func didEnd
     
+    
+    func splitTextIntoFields(theText:String) {
+        let maxInOneLine:Int = 25
+        var i:Int = 0
+        
+        var line1:String = ""
+        var line2:String = ""
+        
+        var useLine2:Bool = false
+        
+        for letter in theText.characters {
+            
+            if (i > maxInOneLine && String(letter) == " ") {
+                useLine2 = true
+            }
+            
+            if (useLine2 == false){
+                line1 = line1 + String(letter)
+            } else {
+                 line2 = line2 + String(letter)
+            }
+            
+            i += 1
+        }
+        
+        infoLabel1.text  = line1
+        infoLabel2.text = line2
+    }
     
     
 }
