@@ -22,19 +22,11 @@ class NonPlayerCharacter: SKSpriteNode {
     var reminderSpeechArray = [String]()
     var alreadyContacted:Bool = false
     var currentSpeech:String = ""
+    var speechIcon:String = ""
+    var isCollidable:Bool = false
     
     func setupWithDict( theDict: [String: Any] ){
     
-        let body:SKPhysicsBody = SKPhysicsBody(circleOfRadius: self.frame.size.width/3, center: CGPoint.zero)
-        self.physicsBody = body
-        body.isDynamic = true
-        body.affectedByGravity = false
-        body.allowsRotation = false
-        
-        self.physicsBody?.categoryBitMask = BodyType.npc.rawValue
-        self.physicsBody?.collisionBitMask =  BodyType.building.rawValue
-        self.physicsBody?.contactTestBitMask =  BodyType.player.rawValue
-
         
         for (key, value) in theDict
         {
@@ -67,7 +59,37 @@ class NonPlayerCharacter: SKSpriteNode {
                     reminderSpeechArray.append(theValue)
                 }
              }//remind
+            else if (key == "Icon") {
+                if let theValue = value as? String {
+                    speechIcon = theValue
+                }
+            }//Icon
+            else if (key == "Collidable") {
+                if let theValue = value as? Bool {
+                    isCollidable = theValue
+                }
+            }//Icon
     }//for
+        
+        let body:SKPhysicsBody = SKPhysicsBody(circleOfRadius: self.frame.size.width/3, center: CGPoint.zero)
+        self.physicsBody = body
+        body.isDynamic = true
+        body.affectedByGravity = false
+        body.allowsRotation = false
+        
+        self.physicsBody?.categoryBitMask = BodyType.npc.rawValue
+        
+        self.physicsBody?.contactTestBitMask =  BodyType.player.rawValue
+        
+        if ( isCollidable == true) {
+            self.physicsBody?.collisionBitMask =  BodyType.building.rawValue
+            print("NPC is colliding with buildings = \(isCollidable)")
+        } else {
+            self.physicsBody?.collisionBitMask =  0
+            print("NPC is colliding with buildings = \(isCollidable)")
+
+        }
+        walkRandom()
 }//setup with dict
     
     func walkRandom() {
