@@ -15,12 +15,14 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let initialLevel:String = "Grassland"
+        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = GameScene(fileNamed: "GameScene") {
+            if let scene = GameScene(fileNamed: initialLevel) {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                scene.currentLevel = "Grassland"
+                scene.currentLevel = initialLevel
                 
                 // Present the scene
                 view.presentScene(scene)
