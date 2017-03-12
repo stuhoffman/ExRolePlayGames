@@ -24,10 +24,12 @@ extension GameScene {
         else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
             
             //print ("touched a castle")
+                loadLevel(theLevel: "Dungeon")
         }
         else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.castle.rawValue) {
             
             //print ("touched a castle")
+                loadLevel(theLevel: "Dungeon")
         }
         else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.npc.rawValue) {
             if let theNPC:NonPlayerCharacter = contact.bodyB.node as? NonPlayerCharacter {

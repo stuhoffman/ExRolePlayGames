@@ -12,6 +12,9 @@
 		2002AF671E75BD4700DC009A /* GameScene_PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AF661E75BD4700DC009A /* GameScene_PropertyList.swift */; };
 		2002AF691E75BDCB00DC009A /* GameScene_Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AF681E75BDCB00DC009A /* GameScene_Player.swift */; };
 		2002AF6B1E75BE8600DC009A /* GameScene_Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AF6A1E75BE8600DC009A /* GameScene_Helpers.swift */; };
+		2002AF6D1E75D74B00DC009A /* Dungeon.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2002AF6C1E75D74B00DC009A /* Dungeon.sks */; };
+		2002AF6F1E75DA6400DC009A /* DungeonPad.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2002AF6E1E75DA6400DC009A /* DungeonPad.sks */; };
+		2002AF711E75DAEC00DC009A /* SharedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AF701E75DAEC00DC009A /* SharedHelpers.swift */; };
 		2036BF8A1E68E1B200FB36A1 /* NonPlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */; };
 		2036C0B71E691B6E00FB36A1 /* AttackingFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0B61E691B6D00FB36A1 /* AttackingFrames.atlas */; };
 		2036C0BC1E691BB400FB36A1 /* VillagerBackWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0B81E691BB400FB36A1 /* VillagerBackWalking.atlas */; };
@@ -24,7 +27,6 @@
 		207D01A11E67C7E40085C20D /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207D01A01E67C7E40085C20D /* GameData.plist */; };
 		20BF65D61E711E500037CE7C /* Herculanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20BF65D51E711E500037CE7C /* Herculanum.ttf */; };
 		DA0304831E538FA70003FA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0304821E538FA70003FA86 /* AppDelegate.swift */; };
-		DA0304851E538FA70003FA86 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA0304841E538FA70003FA86 /* GameScene.sks */; };
 		DA0304871E538FA70003FA86 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA0304861E538FA70003FA86 /* Actions.sks */; };
 		DA0304891E538FA70003FA86 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0304881E538FA70003FA86 /* GameScene.swift */; };
 		DA03048B1E538FA70003FA86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03048A1E538FA70003FA86 /* GameViewController.swift */; };
@@ -40,6 +42,9 @@
 		2002AF661E75BD4700DC009A /* GameScene_PropertyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_PropertyList.swift; sourceTree = "<group>"; };
 		2002AF681E75BDCB00DC009A /* GameScene_Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_Player.swift; sourceTree = "<group>"; };
 		2002AF6A1E75BE8600DC009A /* GameScene_Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_Helpers.swift; sourceTree = "<group>"; };
+		2002AF6C1E75D74B00DC009A /* Dungeon.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dungeon.sks; sourceTree = "<group>"; };
+		2002AF6E1E75DA6400DC009A /* DungeonPad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DungeonPad.sks; sourceTree = "<group>"; };
+		2002AF701E75DAEC00DC009A /* SharedHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedHelpers.swift; sourceTree = "<group>"; };
 		2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonPlayerCharacter.swift; sourceTree = "<group>"; };
 		2036C0B61E691B6D00FB36A1 /* AttackingFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AttackingFrames.atlas; sourceTree = "<group>"; };
 		2036C0B81E691BB400FB36A1 /* VillagerBackWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerBackWalking.atlas; sourceTree = "<group>"; };
@@ -53,7 +58,6 @@
 		20BF65D51E711E500037CE7C /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Herculanum.ttf; path = VillagerRightWalking.atlas/Herculanum.ttf; sourceTree = "<group>"; };
 		DA03047F1E538FA70003FA86 /* RolePlayingGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RolePlayingGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0304821E538FA70003FA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA0304841E538FA70003FA86 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		DA0304861E538FA70003FA86 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		DA0304881E538FA70003FA86 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DA03048A1E538FA70003FA86 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +108,9 @@
 			children = (
 				DA0304821E538FA70003FA86 /* AppDelegate.swift */,
 				DA03049A1E5390350003FA86 /* Castle.swift */,
-				DA0304841E538FA70003FA86 /* GameScene.sks */,
 				207656AC1E7512B8008BD0E9 /* Grassland.sks */,
+				2002AF6C1E75D74B00DC009A /* Dungeon.sks */,
+				2002AF6E1E75DA6400DC009A /* DungeonPad.sks */,
 				20BF65D71E711E610037CE7C /* Fonts */,
 				DA0304861E538FA70003FA86 /* Actions.sks */,
 				DA0304881E538FA70003FA86 /* GameScene.swift */,
@@ -114,6 +119,7 @@
 				2002AF641E75BC4900DC009A /* GameScene_Physics.swift */,
 				2002AF661E75BD4700DC009A /* GameScene_PropertyList.swift */,
 				2002AF621E75BAED00DC009A /* GameScene_Gestures.swift */,
+				2002AF701E75DAEC00DC009A /* SharedHelpers.swift */,
 				207D01981E6541F70085C20D /* AttackArea.swift */,
 				DA03048A1E538FA70003FA86 /* GameViewController.swift */,
 				2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */,
@@ -194,14 +200,15 @@
 			files = (
 				207D019F1E654A360085C20D /* FrontAttackFrames.atlas in Resources */,
 				DA03048E1E538FA70003FA86 /* Main.storyboard in Resources */,
+				2002AF6D1E75D74B00DC009A /* Dungeon.sks in Resources */,
 				20BF65D61E711E500037CE7C /* Herculanum.ttf in Resources */,
-				DA0304851E538FA70003FA86 /* GameScene.sks in Resources */,
 				2036C0BD1E691BB400FB36A1 /* VillagerFrontWalking.atlas in Resources */,
 				207656AD1E7512B8008BD0E9 /* Grassland.sks in Resources */,
 				207D01A11E67C7E40085C20D /* GameData.plist in Resources */,
 				2036C0B71E691B6E00FB36A1 /* AttackingFrames.atlas in Resources */,
 				2036C0BF1E691BB400FB36A1 /* VillagerRightWalking.atlas in Resources */,
 				DA0304901E538FA70003FA86 /* Assets.xcassets in Resources */,
+				2002AF6F1E75DA6400DC009A /* DungeonPad.sks in Resources */,
 				2036C0BE1E691BB400FB36A1 /* VillagerLeftWalking.atlas in Resources */,
 				2036C0BC1E691BB400FB36A1 /* VillagerBackWalking.atlas in Resources */,
 				DA0304931E538FA70003FA86 /* LaunchScreen.storyboard in Resources */,
@@ -224,6 +231,7 @@
 				2002AF671E75BD4700DC009A /* GameScene_PropertyList.swift in Sources */,
 				DA0304831E538FA70003FA86 /* AppDelegate.swift in Sources */,
 				2002AF691E75BDCB00DC009A /* GameScene_Player.swift in Sources */,
+				2002AF711E75DAEC00DC009A /* SharedHelpers.swift in Sources */,
 				207D01991E6541F70085C20D /* AttackArea.swift in Sources */,
 				2002AF6B1E75BE8600DC009A /* GameScene_Helpers.swift in Sources */,
 				DA03049B1E5390350003FA86 /* Castle.swift in Sources */,

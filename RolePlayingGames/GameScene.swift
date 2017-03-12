@@ -39,6 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var infoLabel2:SKLabelNode = SKLabelNode()
     var speechIcon:SKSpriteNode = SKSpriteNode()
     
+    var transitionInProgress:Bool = false
     
     //MARK: Did move to view
     override func didMove(to view: SKView) {

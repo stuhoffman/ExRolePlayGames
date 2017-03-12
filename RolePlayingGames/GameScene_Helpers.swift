@@ -68,5 +68,27 @@ extension GameScene {
         return somePoint
     }
     
+    func loadLevel(theLevel:String ) {
+            //pass in the level to start at
+        if (transitionInProgress == false){
+            transitionInProgress = true
 
+            let fullSKSNameToLoad:String = SharedHelpers.checkIfSKSExists(baseSKSName: theLevel)
+            
+            if let scene = GameScene(fileNamed: fullSKSNameToLoad) {
+                //cleanUpScene() to do
+                scene.currentLevel = theLevel
+                scene.scaleMode = .aspectFill
+                
+                let transition:SKTransition = SKTransition.fade(with:SKColor.black, duration:2)
+                self.view?.presentScene(scene, transition:transition)
+                
+            } else {
+                print("Could not find SKS File")
+            }
+
+        }
+        
+    }
+    
 }
