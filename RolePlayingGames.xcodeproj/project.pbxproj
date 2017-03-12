@@ -15,6 +15,7 @@
 		2002AF6D1E75D74B00DC009A /* Dungeon.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2002AF6C1E75D74B00DC009A /* Dungeon.sks */; };
 		2002AF6F1E75DA6400DC009A /* DungeonPad.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2002AF6E1E75DA6400DC009A /* DungeonPad.sks */; };
 		2002AF711E75DAEC00DC009A /* SharedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002AF701E75DAEC00DC009A /* SharedHelpers.swift */; };
+		2002AF731E76069700DC009A /* LevelStuff.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2002AF721E76069700DC009A /* LevelStuff.xcassets */; };
 		2036BF8A1E68E1B200FB36A1 /* NonPlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */; };
 		2036C0B71E691B6E00FB36A1 /* AttackingFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0B61E691B6D00FB36A1 /* AttackingFrames.atlas */; };
 		2036C0BC1E691BB400FB36A1 /* VillagerBackWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0B81E691BB400FB36A1 /* VillagerBackWalking.atlas */; };
@@ -45,6 +46,7 @@
 		2002AF6C1E75D74B00DC009A /* Dungeon.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dungeon.sks; sourceTree = "<group>"; };
 		2002AF6E1E75DA6400DC009A /* DungeonPad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DungeonPad.sks; sourceTree = "<group>"; };
 		2002AF701E75DAEC00DC009A /* SharedHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedHelpers.swift; sourceTree = "<group>"; };
+		2002AF721E76069700DC009A /* LevelStuff.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LevelStuff.xcassets; sourceTree = "<group>"; };
 		2036BF891E68E1B200FB36A1 /* NonPlayerCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonPlayerCharacter.swift; sourceTree = "<group>"; };
 		2036C0B61E691B6D00FB36A1 /* AttackingFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AttackingFrames.atlas; sourceTree = "<group>"; };
 		2036C0B81E691BB400FB36A1 /* VillagerBackWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerBackWalking.atlas; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				2036C0B61E691B6D00FB36A1 /* AttackingFrames.atlas */,
 				207D019E1E654A360085C20D /* FrontAttackFrames.atlas */,
 				DA03048F1E538FA70003FA86 /* Assets.xcassets */,
+				2002AF721E76069700DC009A /* LevelStuff.xcassets */,
 				DA0304911E538FA70003FA86 /* LaunchScreen.storyboard */,
 				207D01A01E67C7E40085C20D /* GameData.plist */,
 				DA0304941E538FA70003FA86 /* Info.plist */,
@@ -213,6 +216,7 @@
 				2036C0BC1E691BB400FB36A1 /* VillagerBackWalking.atlas in Resources */,
 				DA0304931E538FA70003FA86 /* LaunchScreen.storyboard in Resources */,
 				DA0304871E538FA70003FA86 /* Actions.sks in Resources */,
+				2002AF731E76069700DC009A /* LevelStuff.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
