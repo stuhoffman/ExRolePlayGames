@@ -91,4 +91,11 @@ extension GameScene {
         
     }
     
+    func rememberThis( withThing:String, toRemember:String) {
+        
+        defaults.set(true, forKey: currentLevel + withThing + toRemember)
+        // ex: "GrasslandVillager1alreadyContacted" = true
+        
+    }
+    
 }

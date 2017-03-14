@@ -41,6 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var transitionInProgress:Bool = false
     
+    let defaults:UserDefaults = UserDefaults.standard
+    
     //MARK: Did move to view
     override func didMove(to view: SKView) {
         

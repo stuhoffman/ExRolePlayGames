@@ -63,7 +63,7 @@ extension GameScene {
             newNPC.zPosition = thePlayer.zPosition - 1
             newNPC.position = putWithinRange(nodeName: theRange)
             
-            
+            newNPC.alreadyContacted = defaults.bool(forKey: currentLevel + nickName + "alreadyContacted")
         }
     }
     

@@ -72,7 +72,7 @@
 		<dict>
 			<key>NPC</key>
 			<dict>
-				<key>Villager2</key>
+				<key>DungeonVillager1</key>
 				<dict>
 					<key>BaseImage</key>
 					<string>VillagerBase</string>
@@ -99,9 +99,9 @@
 					<key>Icon</key>
 					<string>VillagerIcon</string>
 					<key>Collidable</key>
-					<true/>
+					<false/>
 				</dict>
-				<key>Villager1</key>
+				<key>DungeonVillager2</key>
 				<dict>
 					<key>BaseImage</key>
 					<string>VillagerBase</string>
@@ -115,8 +115,8 @@
 					<string>VillagerRight</string>
 					<key>InitialSpeech</key>
 					<array>
-						<string>Howdy stranger, did you hear the disturbance at the cave last night?</string>
-						<string>My Brother heard something odd at the cave last night</string>
+						<string>Howdy stranger, want to know something cool?</string>
+						<string>Winter is coming</string>
 					</array>
 					<key>ReminderSpeech</key>
 					<array>
