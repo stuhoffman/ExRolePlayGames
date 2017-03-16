@@ -27,7 +27,13 @@ extension GameScene {
                                 if (key == "NPC") {
                                     
                                     createNPCwithDict( theDict: value as! [String : Any] )
+                                } else if (key == "Properties") {
+                                    
+                                    parseLevelSpecificProperties( theDict: value as! [String : Any] )
                                 }
+
+                                
+                                
                             }
                         }
                     }
@@ -67,4 +73,40 @@ extension GameScene {
         }
     }
     
+    func parseLevelSpecificProperties( theDict:[String : Any]) {
+        //print(theDict)
+        for (key, value) in theDict {
+            
+            if (key == "CameraFollowsPlayer") {
+                if (value is Bool) {
+                    cameraFollowsPlayer = value as! Bool
+                }
+                
+            } else  if (key == "CameraOffset") {
+                if (value is String) {
+                    let somePoint:CGPoint = CGPointFromString(value as! String )
+                        cameraXOffset = somePoint.x
+                        cameraYOffset = somePoint.y
+                    
+                }
+                
+            } else  if (key == "ContinuePoint") {
+                if (value is Bool) {
+                    if (value as! Bool == true) {
+                        print("Detected continue point")
+                        defaults.set(currentLevel, forKey: "ContinuePoint")
+                    }
+                }
+                
+            } else  if (key == "DisableAttack") {
+                
+                if (value as! Bool == true) {
+                    disableAttack = value as! Bool
+                }
+            }
+
+
+
+        }
+    }
 }

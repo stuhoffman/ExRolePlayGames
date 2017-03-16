@@ -15,7 +15,9 @@ extension GameScene {
     
     func tappedView() {
         print("Attacking")
-        attack()
+        if (disableAttack == false) {
+            attack()
+        }
         
     }
     

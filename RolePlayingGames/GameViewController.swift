@@ -11,11 +11,18 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    let defaults:UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        var initialLevel:String = "Grassland"
+
+        if (defaults.object(forKey: "ContinuePoint") != nil) {
+            initialLevel = defaults.string(forKey: "ContinuePoint")!
+            print("InitialLevel = \(initialLevel)")
+        }
         
-        let initialLevel:String = "Grassland"
         let fullSKSNameToLoad:String = SharedHelpers.checkIfSKSExists(baseSKSName: initialLevel)
         
         if let view = self.view as! SKView? {

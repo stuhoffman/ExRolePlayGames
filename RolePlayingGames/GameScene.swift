@@ -43,6 +43,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let defaults:UserDefaults = UserDefaults.standard
     
+    var cameraFollowsPlayer:Bool = true
+    var cameraXOffset:CGFloat = 0
+    var cameraYOffset:CGFloat = 0
+    var disableAttack:Bool = false
+    
     //MARK: Did move to view
     override func didMove(to view: SKView) {
         
@@ -156,7 +161,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }//for node loop
         
-        self.camera?.position = thePlayer.position
+        if (cameraFollowsPlayer == true) {
+            
+            self.camera?.position = CGPoint(x: thePlayer.position.x+cameraXOffset, y: thePlayer.position.y+cameraYOffset)
+                
+        }
+        
     }
     
     

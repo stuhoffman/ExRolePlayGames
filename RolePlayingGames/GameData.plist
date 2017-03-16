@@ -6,6 +6,32 @@
 	<dict>
 		<key>Grassland</key>
 		<dict>
+			<key>Properties</key>
+			<dict>
+				<key>CameraFollowsPlayer</key>
+				<true/>
+				<key>DisableAttack</key>
+				<false/>
+				<key>CameraOffset</key>
+				<string>{200,0}</string>
+				<key>ContinuePoint</key>
+				<true/>
+			</dict>
+			<key>Clear</key>
+			<dict/>
+			<key>Rewards</key>
+			<dict>
+				<key>Health</key>
+				<string></string>
+				<key>Projectile / Weapon</key>
+				<string></string>
+				<key>Inventory</key>
+				<string></string>
+				<key>Currency</key>
+				<string></string>
+				<key>Class</key>
+				<string></string>
+			</dict>
 			<key>NPC</key>
 			<dict>
 				<key>Villager2</key>
@@ -70,6 +96,17 @@
 		</dict>
 		<key>Dungeon</key>
 		<dict>
+			<key>Properties</key>
+			<dict>
+				<key>CameraFollowsPlayer</key>
+				<true/>
+				<key>DisableAttack</key>
+				<false/>
+				<key>CameraOffset</key>
+				<string>{0,200}</string>
+				<key>ContinuePoint</key>
+				<true/>
+			</dict>
 			<key>NPC</key>
 			<dict>
 				<key>DungeonVillager1</key>
