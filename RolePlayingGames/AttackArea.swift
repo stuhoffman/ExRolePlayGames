@@ -20,7 +20,7 @@ class AttackArea: SKSpriteNode {
         
         self.physicsBody?.categoryBitMask = BodyType.attackArea.rawValue
         self.physicsBody?.collisionBitMask =  0
-        self.physicsBody?.contactTestBitMask =  BodyType.castle.rawValue
+        //self.physicsBody?.contactTestBitMask =  BodyType.item.rawValue
         
         upAndAway()
         

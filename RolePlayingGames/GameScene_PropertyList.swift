@@ -105,8 +105,73 @@ extension GameScene {
                 }
             }
 
-
-
         }
+
+ }//end func parseLevelSpecificProperties
+    
+    
+            //MARK: Set up items...
+            
+            func setUpItem(theItem:WorldItem) {
+                
+                var foundItemInLevelDict:Bool = false
+                let path = Bundle.main.path(forResource:"GameData", ofType: "plist")
+                let dict:NSDictionary = NSDictionary(contentsOfFile: path!)!
+                
+                if (dict.object(forKey: "Levels") != nil) {
+                    if let levelDict:[String : Any] = dict.object(forKey: "Levels") as? [String : Any] {
+                        for (key, value) in levelDict {
+                            if ( key == currentLevel) {
+                                
+                                if let levelData:[String : Any] = value as? [String : Any] {
+                                    
+                                    for (key, value) in levelData {
+                                        if (key == "Items") {
+                                            
+                                            if let itemsData:[String : Any] = value as? [String : Any] {
+                                                    for (key, value) in itemsData {
+                                                        
+                                                        if (key == theItem.name) {
+                                                            foundItemInLevelDict = true
+                                                            useDictWithWorldItem(theDict: value as! [String: Any], theItem: theItem)
+                                                            print("Found Property key: \(key) to setup with property value: \(value)")
+                                                                break
+                                                        }//end if theItem.name
+                                                }//end for key itemsData
+                                            }//end itemsData
+                                        }//end if "Items"
+                                        break
+                                    }//end for key in levelData
+                                }//end levelData
+                                break
+                            }//end if currentLevel
+                        }//end levelDict
+                    }//end letLevelDict levels
+                }//end if forKey:"Levels"
+                
+                if (foundItemInLevelDict == false) {
+                    
+                    if (dict.object(forKey: "Items") != nil) {
+                        if let itemsData:[String : Any] = dict.object(forKey: "Items") as? [String : Any] {
+                            
+                            for (key, value) in itemsData {
+                                
+                                if (key == theItem.name) {
+                                    useDictWithWorldItem(theDict: value as! [String: Any], theItem: theItem)
+                                    print("Found Property key: \(key) to setup with property value: in Root")
+                                    break
+                                }//end if theItem.name
+                            }//end for key itemsData
+
+                        }//end if levelDict
+                    }//end dict.object
+                }//end foundItemInLevelDict == false
+                
+            }//end func setUpItem
+
+    
+    func useDictWithWorldItem( theDict:[String: Any] ,theItem:WorldItem) {
+        print ( theDict)
     }
+
 }

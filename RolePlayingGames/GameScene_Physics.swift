@@ -13,25 +13,7 @@ extension GameScene {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.building.rawValue) {
-            
-            //print ("touched a building")
-        }
-        else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.building.rawValue) {
-            
-            //print ("touched a building")
-        }
-        else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
-            
-            //print ("touched a castle")
-                loadLevel(theLevel: "Dungeon")
-        }
-        else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.castle.rawValue) {
-            
-            //print ("touched a castle")
-                loadLevel(theLevel: "Dungeon")
-        }
-        else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.npc.rawValue) {
+     if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.npc.rawValue) {
             if let theNPC:NonPlayerCharacter = contact.bodyB.node as? NonPlayerCharacter {
                 splitTextIntoFields( theText: theNPC.speak())
                 theNPC.contactPlayer()
@@ -53,16 +35,7 @@ extension GameScene {
                 speechIcon.texture = SKTexture(imageNamed: theNPC.speechIcon)
             }
         }
-        
-        /////
-        if (contact.bodyA.categoryBitMask == BodyType.attackArea.rawValue && contact.bodyB.categoryBitMask == BodyType.castle.rawValue) {
-            print ("Hit the castle")
-            contact.bodyB.node?.removeFromParent()
-        }
-        else if (contact.bodyA.categoryBitMask == BodyType.castle.rawValue && contact.bodyB.categoryBitMask == BodyType.attackArea.rawValue) {
-            print ("Hit the castle")
-            contact.bodyA.node?.removeFromParent()
-        }
+ 
         
     }
     

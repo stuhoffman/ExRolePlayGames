@@ -12,10 +12,9 @@ import GameplayKit
 enum BodyType:UInt32{
     
     case player = 1
-    case building = 2
-    case castle = 4
-    case attackArea = 8
-    case npc = 16
+    case item = 2
+    case attackArea = 4
+    case npc = 8
     
     //powers of 2 (so keep multiplying by 2
     
@@ -114,30 +113,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             thePlayer.physicsBody?.isDynamic = true
             thePlayer.physicsBody?.affectedByGravity = false
             thePlayer.physicsBody?.categoryBitMask = BodyType.player.rawValue
-            thePlayer.physicsBody?.collisionBitMask = BodyType.castle.rawValue
+            //thePlayer.physicsBody?.collisionBitMask = BodyType.item.rawValue
             
-            thePlayer.physicsBody?.contactTestBitMask = BodyType.building.rawValue | BodyType.castle.rawValue
-            
+            thePlayer.physicsBody?.contactTestBitMask = BodyType.item.rawValue
         }
         
         for node in self.children {
             
-            if (node.name == "Building") {
+            if let someItem:WorldItem = node as? WorldItem {
                 
-                if (node is SKSpriteNode) {
-                    
-                    node.physicsBody?.categoryBitMask = BodyType.building.rawValue
-                    node.physicsBody?.collisionBitMask = 0
-                    
-                    print ("found a building")
-                }
-            }
-            
-            if let aCastle:Castle = node as? Castle {
-                
-                aCastle.setUpCastle()
-                aCastle.dudesInCastle = 5
-                
+                setUpItem(theItem:someItem)
             }
         }
     }
