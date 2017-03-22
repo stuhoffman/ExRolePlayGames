@@ -34,10 +34,25 @@ extension GameScene {
                 speechIcon.isHidden = false
                 speechIcon.texture = SKTexture(imageNamed: theNPC.speechIcon)
             }
+     } else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.item.rawValue) {
+        
+        if let theItem:WorldItem = contact.bodyB.node as? WorldItem {
+            
+            contactWithItem(theItem: theItem)
+            
         }
+     }
+     else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.item.rawValue) {
+        
+        if let theItem:WorldItem = contact.bodyA.node as? WorldItem {
+            
+            contactWithItem(theItem: theItem)
+        }
+        }
+
  
         
-    }
+    }//end func didBegin
     
     //MARK: Did End Contact
     
@@ -66,5 +81,26 @@ extension GameScene {
         }
     }//end func didEnd
     
-
+    func contactWithItem( theItem:WorldItem ) {
+        
+        if (theItem.isPortal == true) {
+            
+            if ( theItem.portalToLevel != " ")   {
+                
+                //must goto another level
+                if ( theItem.portalToWhere != " ")   {
+                    
+                    loadLevel(theLevel: theItem.portalToLevel, toWhere: theItem.portalToWhere)
+                } else {
+                    
+                    loadLevel(theLevel: theItem.portalToLevel, toWhere: " ")
+                }
+            } else  if ( theItem.portalToWhere != " ")  {
+                
+                //must got somwhere in this level
+            }
+        }
+        
+    }
+    
 }

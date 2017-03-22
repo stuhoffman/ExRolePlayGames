@@ -47,6 +47,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var cameraYOffset:CGFloat = 0
     var disableAttack:Bool = false
     
+    var entryNode:String = " "
+    
     //MARK: Did move to view
     override func didMove(to view: SKView) {
         
@@ -116,6 +118,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //thePlayer.physicsBody?.collisionBitMask = BodyType.item.rawValue
             
             thePlayer.physicsBody?.contactTestBitMask = BodyType.item.rawValue
+            
+            if (entryNode != " ") {
+                
+                if (self.childNode(withName: entryNode) != nil  ) {
+                    
+                    thePlayer.position = (self.childNode(withName: entryNode)?.position)!
+                }
+            }
         }
         
         for node in self.children {

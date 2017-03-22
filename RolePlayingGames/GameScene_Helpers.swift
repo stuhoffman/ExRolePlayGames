@@ -68,7 +68,7 @@ extension GameScene {
         return somePoint
     }
     
-    func loadLevel(theLevel:String ) {
+    func loadLevel(theLevel:String , toWhere:String) {
             //pass in the level to start at
         if (transitionInProgress == false){
             transitionInProgress = true
@@ -79,6 +79,7 @@ extension GameScene {
                 //cleanUpScene() to do
                 scene.currentLevel = theLevel
                 scene.scaleMode = .aspectFill
+                scene.entryNode = toWhere
                 
                 let transition:SKTransition = SKTransition.fade(with:SKColor.black, duration:2)
                 self.view?.presentScene(scene, transition:transition)
