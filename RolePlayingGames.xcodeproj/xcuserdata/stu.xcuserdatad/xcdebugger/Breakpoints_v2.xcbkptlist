@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RolePlayingGames/GameScene_Physics.swift"
-            timestampString = "511932520.749787"
+            timestampString = "512240438.315325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "contactWithItem(theItem:)"
             landmarkType = "7">
          </BreakpointContent>

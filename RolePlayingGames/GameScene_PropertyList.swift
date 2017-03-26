@@ -42,6 +42,8 @@ extension GameScene {
         }
     }
     
+    //MARK: CREATE NPC......
+    
     func createNPCwithDict ( theDict:[String : Any]) {
         //print(theDict)
         for (key, value) in theDict {
@@ -50,6 +52,20 @@ extension GameScene {
             var theRange:String = ""
             let nickName:String = key
             
+            //added during Item session...
+            var alreadyFoundNPCinScene:Bool = false
+            for node in self.children {
+                if (node.name == key) {
+                    if (node is NonPlayerCharacter) {
+                        
+                        useDictWithNPC(theDict: value as! [String : Any], theNPC: node as! NonPlayerCharacter)
+                        alreadyFoundNPCinScene = true
+                    }//end node is nonplayerchar
+                }//end node name
+            }//end for loop
+            
+            if (alreadyFoundNPCinScene == false ) {
+                
             if let NPCData:[String : Any] = value as? [String : Any] {
                 for (key, value) in  NPCData {
                     if (key == "BaseImage") {
@@ -70,8 +86,25 @@ extension GameScene {
             newNPC.position = putWithinRange(nodeName: theRange)
             
             newNPC.alreadyContacted = defaults.bool(forKey: currentLevel + nickName + "alreadyContacted")
-        }
+            }
+
+        }//end if already Found NPC in scene
     }
+    
+    func useDictWithNPC( theDict:[String : Any], theNPC: NonPlayerCharacter) {
+        
+        theNPC.setupWithDict(theDict: theDict)
+        
+        for (key, value) in theDict {
+            
+            if (key == "Range") {
+                
+                theNPC.position = putWithinRange(nodeName: value as! String)
+            }//end if key is range
+        }//end for loop
+        
+        theNPC.alreadyContacted = defaults.bool(forKey: currentLevel + theNPC.name! + "alreadyContacted")
+    }//end func useDictWithNPC
     
     func parseLevelSpecificProperties( theDict:[String : Any]) {
         //print(theDict)

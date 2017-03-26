@@ -35,17 +35,18 @@ extension GameScene {
                 speechIcon.texture = SKTexture(imageNamed: theNPC.speechIcon)
             }
      } else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue && contact.bodyB.categoryBitMask == BodyType.item.rawValue) {
-        
+        print("BODY B CONTACT PERSON AND ITEM")
         if let theItem:WorldItem = contact.bodyB.node as? WorldItem {
             
+            loadLevel(theLevel: "Grassland", toWhere: "")
             contactWithItem(theItem: theItem)
             
         }
      }
      else if (contact.bodyB.categoryBitMask == BodyType.player.rawValue && contact.bodyA.categoryBitMask == BodyType.item.rawValue) {
-        
+        print("BODY A CONTACT PERSON AND ITEM")
         if let theItem:WorldItem = contact.bodyA.node as? WorldItem {
-            
+            loadLevel(theLevel: "Dungeon", toWhere: "")
             contactWithItem(theItem: theItem)
         }
     }

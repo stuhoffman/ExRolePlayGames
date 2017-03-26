@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var initialLevel:String = "Grassland"
+        var initialLevel:String = "Dungeon"
 
         if (defaults.object(forKey: "ContinuePoint") != nil) {
             initialLevel = defaults.string(forKey: "ContinuePoint")!

@@ -23,7 +23,8 @@ class NonPlayerCharacter: SKSpriteNode {
     var alreadyContacted:Bool = false
     var currentSpeech:String = ""
     var speechIcon:String = ""
-    var isCollidable:Bool = false
+    var isCollidableWithPlayer:Bool = false
+    var isCollidableWithItems:Bool = false
     
     func setupWithDict( theDict: [String: Any] ){
     
@@ -64,11 +65,22 @@ class NonPlayerCharacter: SKSpriteNode {
                     speechIcon = theValue
                 }
             }//Icon
-            else if (key == "Collidable") {
+            else if (key == "CollidableWithItems") {
                 if let theValue = value as? Bool {
-                    isCollidable = theValue
+                    isCollidableWithItems = theValue
                 }
-            }//Icon
+            }//collidableWithItems
+            else if (key == "CollidableWithPlayer") {
+                if let theValue = value as? Bool {
+                    isCollidableWithPlayer = theValue
+                }
+            }//colidableWithPlayer
+            else if (key == "BaseImage") {
+                
+                if let theValue = value as? String {
+                    baseFrame = theValue
+                }
+            }//end base image
     }//for
         
         let body:SKPhysicsBody = SKPhysicsBody(circleOfRadius: self.frame.size.width/3, center: CGPoint.zero)
@@ -81,12 +93,21 @@ class NonPlayerCharacter: SKSpriteNode {
         
         self.physicsBody?.contactTestBitMask =  BodyType.player.rawValue
         
-        if ( isCollidable == true) {
-//            self.physicsBody?.collisionBitMask =  BodyType.item.rawValue
-            print("NPC is colliding with buildings = \(isCollidable)")
+        if ( isCollidableWithPlayer == true && isCollidableWithItems == true) {
+            self.physicsBody?.collisionBitMask =  BodyType.item.rawValue | BodyType.player.rawValue |
+                BodyType.npc.rawValue | BodyType.attackArea.rawValue
+            print("NPC is collidable with items and player")
+        } else if ( isCollidableWithPlayer == false && isCollidableWithItems == true) {
+            self.physicsBody?.collisionBitMask =  BodyType.item.rawValue |
+                BodyType.npc.rawValue | BodyType.attackArea.rawValue
+            print("NPC is collidable with items")
+        } else if ( isCollidableWithPlayer == true && isCollidableWithItems == false) {
+            self.physicsBody?.collisionBitMask =  BodyType.player.rawValue |
+                BodyType.npc.rawValue | BodyType.attackArea.rawValue
+            print("NPC is collidable with player")
         } else {
             self.physicsBody?.collisionBitMask =  0
-            print("NPC is colliding with buildings = \(isCollidable)")
+            print("NPC is collidable with nothing")
 
         }
         walkRandom()

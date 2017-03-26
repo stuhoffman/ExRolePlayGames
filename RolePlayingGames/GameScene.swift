@@ -13,8 +13,8 @@ enum BodyType:UInt32{
     
     case player = 1
     case item = 2
-    case attackArea = 4
-    case npc = 8
+    case attackArea = 8
+    case npc = 16
     
     //powers of 2 (so keep multiplying by 2
     
