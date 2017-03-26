@@ -69,7 +69,7 @@ extension GameScene {
     }
     
     func loadLevel(theLevel:String , toWhere:String) {
-            //pass in the level to start at
+        print("//pass in the level to start at");
         if (transitionInProgress == false){
             transitionInProgress = true
 

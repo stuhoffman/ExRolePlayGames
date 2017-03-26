@@ -48,7 +48,7 @@ extension GameScene {
             
             contactWithItem(theItem: theItem)
         }
-        }
+    }
 
  
         
@@ -82,20 +82,21 @@ extension GameScene {
     }//end func didEnd
     
     func contactWithItem( theItem:WorldItem ) {
-        
+        print("contactWithItem starting")
         if (theItem.isPortal == true) {
             
-            if ( theItem.portalToLevel != " ")   {
-                
+            if ( theItem.portalToLevel != "")   {
+                print("The portalToLevel = \(theItem.portalToLevel)")
                 //must goto another level
-                if ( theItem.portalToWhere != " ")   {
-                    
+                if ( theItem.portalToWhere != "")   {
+                    print("The portalToWhere= \(theItem.portalToWhere)")
+
                     loadLevel(theLevel: theItem.portalToLevel, toWhere: theItem.portalToWhere)
                 } else {
                     
                     loadLevel(theLevel: theItem.portalToLevel, toWhere: " ")
                 }
-            } else  if ( theItem.portalToWhere != " ")  {
+            } else  if ( theItem.portalToWhere != "")  {
                 
                 //must got somwhere in this level
             }
