@@ -25,6 +25,7 @@
 		2036C0BD1E691BB400FB36A1 /* VillagerFrontWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0B91E691BB400FB36A1 /* VillagerFrontWalking.atlas */; };
 		2036C0BE1E691BB400FB36A1 /* VillagerLeftWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0BA1E691BB400FB36A1 /* VillagerLeftWalking.atlas */; };
 		2036C0BF1E691BB400FB36A1 /* VillagerRightWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2036C0BB1E691BB400FB36A1 /* VillagerRightWalking.atlas */; };
+		206AEDCF1E90092F00F834F6 /* GameScene_Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AEDCE1E90092F00F834F6 /* GameScene_Inventory.swift */; };
 		206B451A1E7CF5A3000D2B74 /* WorldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B45191E7CF5A3000D2B74 /* WorldItem.swift */; };
 		207656AD1E7512B8008BD0E9 /* Grassland.sks in Resources */ = {isa = PBXBuildFile; fileRef = 207656AC1E7512B8008BD0E9 /* Grassland.sks */; };
 		207D01991E6541F70085C20D /* AttackArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D01981E6541F70085C20D /* AttackArea.swift */; };
@@ -59,6 +60,7 @@
 		2036C0B91E691BB400FB36A1 /* VillagerFrontWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerFrontWalking.atlas; sourceTree = "<group>"; };
 		2036C0BA1E691BB400FB36A1 /* VillagerLeftWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerLeftWalking.atlas; sourceTree = "<group>"; };
 		2036C0BB1E691BB400FB36A1 /* VillagerRightWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = VillagerRightWalking.atlas; sourceTree = "<group>"; };
+		206AEDCE1E90092F00F834F6 /* GameScene_Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_Inventory.swift; sourceTree = "<group>"; };
 		206B45191E7CF5A3000D2B74 /* WorldItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldItem.swift; path = ../WorldItem.swift; sourceTree = "<group>"; };
 		207656AC1E7512B8008BD0E9 /* Grassland.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Grassland.sks; sourceTree = "<group>"; };
 		207D01981E6541F70085C20D /* AttackArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackArea.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				DA0304881E538FA70003FA86 /* GameScene.swift */,
 				2002AF681E75BDCB00DC009A /* GameScene_Player.swift */,
+				206AEDCE1E90092F00F834F6 /* GameScene_Inventory.swift */,
 				2002AF6A1E75BE8600DC009A /* GameScene_Helpers.swift */,
 				2002AF641E75BC4900DC009A /* GameScene_Physics.swift */,
 				2002AF661E75BD4700DC009A /* GameScene_PropertyList.swift */,
@@ -274,6 +277,7 @@
 				2002AF631E75BAED00DC009A /* GameScene_Gestures.swift in Sources */,
 				DA0304891E538FA70003FA86 /* GameScene.swift in Sources */,
 				DA03048B1E538FA70003FA86 /* GameViewController.swift in Sources */,
+				206AEDCF1E90092F00F834F6 /* GameScene_Inventory.swift in Sources */,
 				2036BF8A1E68E1B200FB36A1 /* NonPlayerCharacter.swift in Sources */,
 				2002AF651E75BC4900DC009A /* GameScene_Physics.swift in Sources */,
 				206B451A1E7CF5A3000D2B74 /* WorldItem.swift in Sources */,

@@ -134,16 +134,16 @@
 				<dict>
 					<key>Requires</key>
 					<dict>
-						<key>Inventory</key>
-						<string>Key</string>
+						<key>Thing</key>
+						<string>CastleKey</string>
 						<key>Amount</key>
 						<integer>50</integer>
 						<key>DeductOnEntry</key>
-						<false/>
+						<true/>
 						<key>TimeToOpen</key>
-						<string>10</string>
+						<integer>10</integer>
 					</dict>
-					<key>Rewards</key>
+					<key>Rewards-off</key>
 					<dict>
 						<key>Health</key>
 						<string></string>
@@ -159,9 +159,14 @@
 					<key>Text</key>
 					<dict>
 						<key>Locked</key>
-						<string></string>
+						<array>
+							<string>Uh oh, looks like the castle requires a key</string>
+							<string>Eeep, the castle requires a key</string>
+						</array>
+						<key>Unlocked</key>
+						<string>Hey I think I can open the castle now. Better go find it!</string>
 						<key>Open</key>
-						<string></string>
+						<string>I&apos;ve got it open!</string>
 					</dict>
 					<key>PortalTo</key>
 					<dict>
@@ -187,11 +192,11 @@
 					<key>Appearance</key>
 					<dict>
 						<key>OpenImage</key>
-						<string></string>
-						<key>OpenAnimation</key>
+						<string>CastleOpen</string>
+						<key>OpenAnimation-off</key>
 						<string></string>
 					</dict>
-					<key>AfterContact</key>
+					<key>AfterContact-off</key>
 					<dict>
 						<key>NeverRewardAgain</key>
 						<false/>
@@ -201,6 +206,24 @@
 						<false/>
 						<key>DeleteBody</key>
 						<false/>
+					</dict>
+				</dict>
+				<key>CastleKey</key>
+				<dict>
+					<key>Rewards</key>
+					<dict>
+						<key>CastleKey</key>
+						<integer>1</integer>
+					</dict>
+					<key>AfterContact</key>
+					<dict>
+						<key>DeleteFromLevel</key>
+						<true/>
+					</dict>
+					<key>RemoveWhen</key>
+					<dict>
+						<key>CastleKey</key>
+						<integer>1</integer>
 					</dict>
 				</dict>
 			</dict>
@@ -307,19 +330,24 @@
 						<key>Class</key>
 						<string></string>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Locked</key>
-						<string></string>
-						<key>Open</key>
-						<string></string>
-					</dict>
 					<key>PortalTo</key>
 					<dict>
 						<key>Level</key>
 						<string>Grassland</string>
 						<key>Where</key>
 						<string>EntryPoint</string>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Locked</key>
+						<array>
+							<string>Uh oh, looks like the castle requires a key</string>
+							<string>Eeep, the castle requires a key</string>
+						</array>
+						<key>Unlocked</key>
+						<string>Hey I think I can open the castle now</string>
+						<key>Open</key>
+						<string>I&apos;ve got it open!</string>
 					</dict>
 					<key>AltPortalTo</key>
 					<dict>

@@ -167,7 +167,7 @@ extension GameScene {
                                                         if (key == theItem.name) {
                                                             foundItemInLevelDict = true
                                                             useDictWithWorldItem(theDict: value as! [String: Any], theItem: theItem)
-                                                            print("Found Property key: \(key) to setup with property value: \(value)")
+                                                            print("Found Property key: \(key) to setup with property value: blank")
                                                                 break
                                                         }//end if theItem.name
                                                 }//end for key itemsData

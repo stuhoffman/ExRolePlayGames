@@ -177,6 +177,14 @@ class NonPlayerCharacter: SKSpriteNode {
                 currentSpeech = reminderSpeechArray[ Int (randomLine) ]
 
             }
+            let wait:SKAction = SKAction.wait(forDuration: 3)
+            let run:SKAction = SKAction.run {
+                
+                self.currentSpeech = ""
+            }
+            
+            self.run(SKAction.sequence([wait, run]))
+
         }
         return currentSpeech
     }
